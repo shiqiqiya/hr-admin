@@ -35,6 +35,18 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    // 反向代理
+    proxy: {
+      // 只要发送请求的时候 前面是以/abc开头 就会匹配到这里
+      // 就会自动反向代理
+      '/abc': {
+        target: 'http://ihrm.itheima.net/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/abc': ''
+        }
+      }
     }
     // 真正的项目有自己的接口服务器  不用模拟
     // before: require('./mock/mock-server.js')
