@@ -5,7 +5,7 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // 国际化
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+// import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 // 全局公共样式
 import '@/styles/index.scss' // global css
 
@@ -30,9 +30,9 @@ import '@/permission' // permission control
 // }
 
 // set ElementUI lang to EN
-Vue.use(ElementUI, { locale })
+// Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
-// Vue.use(ElementUI)
+Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
@@ -41,6 +41,16 @@ Vue.config.productionTip = false
 import * as obj from '@/directives'
 Object.keys(obj).forEach(item => {
   Vue.directive(item, obj[item])
+})
+// 全局组件
+import components from '@/components'
+// 会自动执行install方法
+Vue.use(components)
+
+// 全局过滤器
+import * as filters from '@/filters'
+Object.keys(filters).forEach(item => {
+  Vue.filter(item, filters[item])
 })
 
 new Vue({

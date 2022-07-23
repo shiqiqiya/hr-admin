@@ -141,6 +141,29 @@ const asyncRoutes = [
       component: () => import('@/views/social/index'),
       meta: { title: '社保', icon: 'table' }
     }]
+  },
+  {
+    path: '/import',
+    component: Layout,
+    // 表示在侧边导航隐藏此路由
+    hidden: true,
+    children: [{
+      path: '',
+      name: 'Import',
+      component: () => import('@/views/import/index'),
+      meta: { title: '导入', icon: 'table' }
+    }]
+  },
+  {
+    path: '/employees/detail/:id',
+    component: Layout,
+    // 表示在侧边导航隐藏此路由
+    hidden: true,
+    children: [{
+      path: '',
+      name: 'EmployeesDetail',
+      component: () => import('@/views/employees/detail')
+    }]
   }
 ]
 

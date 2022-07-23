@@ -41,6 +41,7 @@ module.exports = {
       // 只要发送请求的时候 前面是以/abc开头 就会匹配到这里
       // 就会自动反向代理
       '/abc': {
+        // http://ihrm.itheima.net
         target: 'http://ihrm.itheima.net/',
         changeOrigin: true,
         pathRewrite: {
