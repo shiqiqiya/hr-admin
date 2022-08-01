@@ -42,7 +42,7 @@ module.exports = {
       // 就会自动反向代理
       '/abc': {
         // http://ihrm.itheima.net
-        target: 'http://ihrm.itheima.net/',
+        target: 'http://ihrm-java.itheima.net/',
         changeOrigin: true,
         pathRewrite: {
           '^/abc': ''

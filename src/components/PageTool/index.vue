@@ -2,7 +2,12 @@
   <el-card>
     <el-row type="flex" justify="space-between" align="middel">
       <el-col>
-        <el-alert type="info" show-icon :closable="false">
+        <el-alert
+          v-if="title.length > 0"
+          type="info"
+          show-icon
+          :closable="false"
+        >
           {{ title }}
         </el-alert>
       </el-col>
